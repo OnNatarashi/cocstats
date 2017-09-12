@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Hdvs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hdv in hdvs %}
+            <tr>
+                <td><a href="{{ path('hdv_show', { 'id': hdv.id }) }}">{{ hdv.id }}</a></td>
+                <td>{{ hdv.nom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('hdv_show', { 'id': hdv.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('hdv_edit', { 'id': hdv.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('hdv_new') }}">Create a new hdv</a>
+        </li>
+    </ul>
+{% endblock %}

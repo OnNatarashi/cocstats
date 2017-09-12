@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Batiment_hdvs list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Level Max</th>
+                <th>Batiment</th>
+                <th>HDV</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for batiment_hdv in batiment_hdvs %}
+            <tr>
+                <td><a href="{{ path('batiment_hdv_show', { 'id': batiment_hdv.id }) }}">{{ batiment_hdv.id }}</a></td>
+                <td>{{ batiment_hdv.levelMax }}</td>
+                <td>{{ batiment_hdv.batiment.nom }}</td>
+                <td>{{ batiment_hdv.hdv.nom }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('batiment_hdv_show', { 'id': batiment_hdv.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('batiment_hdv_edit', { 'id': batiment_hdv.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('batiment_hdv_new') }}">Create a new batiment_hdv</a>
+        </li>
+    </ul>
+{% endblock %}

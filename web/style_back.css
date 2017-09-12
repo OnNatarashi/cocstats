@@ -1,0 +1,42 @@
+#nav{
+    background-color : black;
+    height: 100px;
+    color : white;
+}
+#body{
+    background-color: red;
+    color : black;
+    height : 500px;
+    overflow : scroll;
+}
+#footer{
+    background-color: green;
+    height: 50px;
+}
+#menu{
+    background-color: white;
+    height: 500px;
+}
+
+#middle #body {
+    float:left;
+    width:60%;
+}
+
+#middle #menu {
+    margin-left:60%   
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+th
+{
+    border: 1px solid black;
+}
+td
+{
+    border: 1px solid black;
+}

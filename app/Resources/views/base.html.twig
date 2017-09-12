@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset( 'style_back.css') }}" />
+    </head>
+    <body>
+        <div id="nav">
+            {% block nav %}{% endblock %}
+        </div>
+        <div id="middle">
+            <div id="body">
+                {% block body %}{% endblock %}
+            </div>
+            <div id="menu">
+                {% block menu %}{% endblock %}
+            </div>
+        </div>
+        <div id="footer">
+            {% block footer %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
